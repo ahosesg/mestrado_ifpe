@@ -1,25 +1,7 @@
 # ============================================================
 # ETAPA 9B - TRIAGEM ESPACIAL E TEMPORAL DAS ESTACOES DE PRECIPITACAO
 # Projeto de Mestrado - MP10 / Suape
-# ============================================================
-#
-# OBJETIVO
-# Reduzir o universo de estacoes de precipitacao consolidado na Etapa 9A
-# por meio de criterios espaciais e temporais, sem escolher ainda uma
-# estacao meteorologica definitiva para cada estacao de MP10.
-#
-# PRINCIPIOS
-# - proximidade espacial e cobertura temporal sao avaliadas separadamente;
-# - nao e criado escore arbitrario com pesos;
-# - os registros duplicados nao entram no calculo de cobertura por dia;
-# - a coordenada 2025 das estacoes MonitorAr nao e usada nesta triagem,
-#   porque a Etapa 2 identificou coordenadas compartilhadas/suspeitas;
-# - usa-se a coordenada MonitorAr de 2024 como referencia espacial recente
-#   para IPOJUCA, EDCUPE, IFPE e CPRH;
-# - Gaibu e SUAPE permanecem pendentes por falta de coordenada documental
-#   validada nesta etapa;
-# - EDCUPE e usada apenas como referencia espacial recente para CUPE,
-#   sem assumir equivalencia cadastral definitiva.
+# Versao corrigida: evita colisao entre colunas de inventario e cobertura anual
 # ============================================================
 
 library(data.table)
@@ -71,18 +53,22 @@ haversine_km <- function(lat1, lon1, lat2, lon2) {
 }
 
 # ------------------------------------------------------------
-# 3. LER DADOS
+# 3. LEITURA
 # ------------------------------------------------------------
 
 inv <- fread(arq_inventario, encoding = "UTF-8")
 cob <- fread(arq_cobertura, encoding = "UTF-8")
 mp10_raw <- fread(arq_mp10, encoding = "UTF-8")
 
+cob[, ano := as.integer(ano)]
+
 # ------------------------------------------------------------
-# 4. REFERENCIAS ESPACIAIS DAS ESTACOES DE MP10
+# 4. REFERENCIAS ESPACIAIS DE MP10
 # ------------------------------------------------------------
 
-# Usa apenas 2024, pois as coordenadas 2025 foram sinalizadas na Etapa 2.
+# Coordenadas de 2025 nao sao usadas porque a Etapa 2 indicou
+# compartilhamentos/deslocamentos suspeitos. A referencia operacional
+# desta triagem e a coordenada MonitorAr de 2024.
 mp10 <- mp10_raw[
   ano == 2024 &
     is.finite(latitude_mediana) &
@@ -110,19 +96,18 @@ fwrite(
 )
 
 # ------------------------------------------------------------
-# 5. COORDENADA REPRESENTATIVA DAS ESTACOES DE PRECIPITACAO
+# 5. COORDENADAS DAS ESTACOES DE PRECIPITACAO
 # ------------------------------------------------------------
 
 inv[, latitude_ref := rowMeans(cbind(latitude_min, latitude_max), na.rm = TRUE)]
 inv[, longitude_ref := rowMeans(cbind(longitude_min, longitude_max), na.rm = TRUE)]
-
 inv[!is.finite(latitude_ref), latitude_ref := NA_real_]
 inv[!is.finite(longitude_ref), longitude_ref := NA_real_]
 
 inv[, amplitude_lat := abs(latitude_max - latitude_min)]
 inv[, amplitude_lon := abs(longitude_max - longitude_min)]
 
-# Limiar apenas diagnostico: aproximadamente 1 km em latitude por 0,01 grau.
+# Limiar apenas diagnostico. Nao e criterio automatico de exclusao.
 inv[, flag_coordenada_variavel :=
       (!is.na(amplitude_lat) & amplitude_lat > 0.01) |
       (!is.na(amplitude_lon) & amplitude_lon > 0.01)]
@@ -131,7 +116,6 @@ inv[, flag_coordenada_variavel :=
 # 6. RESUMO TEMPORAL POR ESTACAO DE PRECIPITACAO
 # ------------------------------------------------------------
 
-cob[, ano := as.integer(ano)]
 cob[, prop_registros_com_valor := fifelse(
   n_registros > 0,
   n_registros_com_valor / n_registros,
@@ -147,13 +131,12 @@ resumo_temp <- cob[
     n_anos_300_dias = sum(n_datas_com_registro >= 300, na.rm = TRUE),
     n_anos_330_dias = sum(n_datas_com_registro >= 330, na.rm = TRUE),
     media_dias_com_registro = mean(n_datas_com_registro, na.rm = TRUE),
-    menor_prop_registros_com_valor = min(prop_registros_com_valor, na.rm = TRUE),
+    menor_prop_registros_com_valor = suppressWarnings(min(prop_registros_com_valor, na.rm = TRUE)),
     media_prop_registros_com_valor = mean(prop_registros_com_valor, na.rm = TRUE)
   ),
   by = .(fonte_dados, cod_estacao)
 ]
 
-# Corrige Inf em casos patologicos.
 for (cc in c("menor_prop_registros_com_valor", "media_prop_registros_com_valor")) {
   resumo_temp[!is.finite(get(cc)), (cc) := NA_real_]
 }
@@ -207,31 +190,18 @@ fwrite(
   bom = TRUE
 )
 
-# Triagem ampla: ate 50 km.
 cand50 <- distancias[distancia_km <= 50]
 setorder(cand50, estacao_mp10, distancia_km, -n_anos_12_meses, -n_anos_300_dias)
-
-fwrite(
-  cand50,
-  file.path(pasta_saida, "candidatos_precipitacao_ate_50km.csv"),
-  bom = TRUE
-)
+fwrite(cand50, file.path(pasta_saida, "candidatos_precipitacao_ate_50km.csv"), bom = TRUE)
 
 cand30 <- distancias[distancia_km <= 30]
 setorder(cand30, estacao_mp10, distancia_km, -n_anos_12_meses, -n_anos_300_dias)
-
-fwrite(
-  cand30,
-  file.path(pasta_saida, "candidatos_precipitacao_ate_30km.csv"),
-  bom = TRUE
-)
+fwrite(cand30, file.path(pasta_saida, "candidatos_precipitacao_ate_30km.csv"), bom = TRUE)
 
 # ------------------------------------------------------------
 # 8. COBERTURA NOS ANOS-ALVO DAS REFERENCIAS DE MP10
 # ------------------------------------------------------------
 
-# Alvos com coordenada espacial operacional disponivel.
-# CUPE usa EDCUPE apenas como referencia espacial provisoria.
 alvos <- data.table(
   estacao_mp10 = c("IFPE", "IPOJUCA", "IPOJUCA", "EDCUPE"),
   estacao_historica = c("IFPE", "IPOJUCA", "IPOJUCA", "CUPE"),
@@ -251,32 +221,37 @@ alvos_dist <- merge(
   allow.cartesian = TRUE
 )
 
+# Renomeia explicitamente as variaveis anuais antes do merge para evitar
+# colisao com n_registros do inventario geral da estacao.
 cob_alvo <- cob[
   , .(
     fonte_dados,
     cod_estacao,
-    ano,
-    n_registros,
-    n_registros_com_valor,
-    n_registros_sem_valor,
-    n_datas_com_registro,
-    n_meses_com_registro,
-    precipitacao_min,
-    precipitacao_max
+    ano_alvo = ano,
+    n_registros_ano = n_registros,
+    n_registros_com_valor_ano = n_registros_com_valor,
+    n_registros_sem_valor_ano = n_registros_sem_valor,
+    n_datas_com_registro_ano = n_datas_com_registro,
+    n_meses_com_registro_ano = n_meses_com_registro,
+    precipitacao_min_ano = precipitacao_min,
+    precipitacao_max_ano = precipitacao_max
   )
 ]
 
 alvos_dist <- merge(
   alvos_dist,
   cob_alvo,
-  by.x = c("fonte_dados", "cod_estacao", "ano_alvo"),
-  by.y = c("fonte_dados", "cod_estacao", "ano"),
+  by = c("fonte_dados", "cod_estacao", "ano_alvo"),
   all.x = TRUE
 )
 
-alvos_dist[, ano_tem_dados := !is.na(n_registros)]
-alvos_dist[, ano_12_meses := !is.na(n_meses_com_registro) & n_meses_com_registro == 12]
-alvos_dist[, ano_300_dias := !is.na(n_datas_com_registro) & n_datas_com_registro >= 300]
+alvos_dist[, ano_tem_dados := !is.na(n_registros_ano)]
+alvos_dist[, ano_12_meses :=
+              !is.na(n_meses_com_registro_ano) & n_meses_com_registro_ano == 12]
+alvos_dist[, ano_300_dias :=
+              !is.na(n_datas_com_registro_ano) & n_datas_com_registro_ano >= 300]
+alvos_dist[, ano_330_dias :=
+              !is.na(n_datas_com_registro_ano) & n_datas_com_registro_ano >= 330]
 
 setorder(
   alvos_dist,
@@ -294,17 +269,13 @@ fwrite(
 )
 
 # ------------------------------------------------------------
-# 9. TOP 10 POR PROXIMIDADE, SEM DEFINIR 'MELHOR' ESTACAO
+# 9. TOP 10 PARA INSPECAO, SEM ESCORE PONDERADO
 # ------------------------------------------------------------
-
-# Este arquivo e apenas uma lista curta para inspecao manual.
-# A ordenacao prioriza cobertura no ano-alvo e depois distancia,
-# sem combinar criterios em um escore ponderado.
 
 top10 <- alvos_dist[
   ano_tem_dados == TRUE
 ][
-  order(estacao_historica, ano_alvo, -ano_12_meses, -ano_300_dias, distancia_km),
+  order(-ano_12_meses, -ano_300_dias, -ano_330_dias, distancia_km),
   head(.SD, 10),
   by = .(estacao_historica, ano_alvo)
 ]
@@ -316,7 +287,7 @@ fwrite(
 )
 
 # ------------------------------------------------------------
-# 10. PENDENCIAS DE PAREAMENTO
+# 10. PENDENCIAS METODOLOGICAS
 # ------------------------------------------------------------
 
 pendencias <- data.table(
@@ -347,7 +318,7 @@ fwrite(
 )
 
 # ------------------------------------------------------------
-# 11. RESUMO
+# 11. RESUMO DA EXECUCAO
 # ------------------------------------------------------------
 
 resumo <- data.table(
@@ -359,7 +330,10 @@ resumo <- data.table(
     "n_pares_ate_30km",
     "n_estacoes_precipitacao_ate30km_unicas",
     "n_estacoes_precipitacao_coord_variavel_ate30km",
-    "n_alvos_estacao_ano_avaliados"
+    "n_alvos_estacao_ano_avaliados",
+    "n_candidatos_ano_alvo_com_dados",
+    "n_candidatos_ano_alvo_12_meses",
+    "n_candidatos_ano_alvo_300_dias"
   ),
   valor = c(
     nrow(mp10),
@@ -368,8 +342,12 @@ resumo <- data.table(
     nrow(cand50),
     nrow(cand30),
     uniqueN(cand30[, paste(fonte_dados, cod_estacao, sep = "::")]),
-    uniqueN(cand30[flag_coordenada_variavel == TRUE, paste(fonte_dados, cod_estacao, sep = "::")]),
-    nrow(alvos)
+    uniqueN(cand30[flag_coordenada_variavel == TRUE,
+                   paste(fonte_dados, cod_estacao, sep = "::")]),
+    nrow(alvos),
+    sum(alvos_dist$ano_tem_dados, na.rm = TRUE),
+    sum(alvos_dist$ano_12_meses, na.rm = TRUE),
+    sum(alvos_dist$ano_300_dias, na.rm = TRUE)
   )
 )
 
