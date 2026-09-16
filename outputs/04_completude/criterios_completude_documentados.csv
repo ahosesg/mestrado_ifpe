@@ -1,0 +1,7 @@
+"nivel","criterio","uso"
+"diario_principal",">= 16 medias horarias validas em 24 h (2/3)","criterio nacional de representatividade temporal"
+"mensal_principal",">= 2/3 das medias diarias validas no mes","criterio nacional de representatividade temporal"
+"anual_principal",">= 1/2 das medias diarias validas em cada quadrimestre","criterio nacional de representatividade temporal"
+"diario_sensibilidade_18h",">= 18 horas validas; analise de sensibilidade","sensibilidade; nao normativo neste projeto"
+"diario_sensibilidade_20h",">= 20 horas validas; analise de sensibilidade","sensibilidade; nao normativo neste projeto"
+"diario_sensibilidade_24h","24 horas validas; analise de sensibilidade","sensibilidade; nao normativo neste projeto"
