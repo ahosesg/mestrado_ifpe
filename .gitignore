@@ -1,0 +1,33 @@
+# RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# R
+.Rcache/
+.Rproj.user
+
+# renv
+renv/library/
+renv/staging/
+
+# Arquivos temporários
+*.tmp
+*.temp
+~$*
+.DS_Store
+Thumbs.db
+
+# Credenciais e variáveis de ambiente
+.Renviron
+.env
+.env.*
+
+# Estados e ambientes do R
+.RData
+.RDataTmp
+*.RData
+
+# Dados brutos do MonitorAr, muito grandes para Git
+Dados_MonitorAr_*.csv
