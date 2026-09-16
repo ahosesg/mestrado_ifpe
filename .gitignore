@@ -34,3 +34,9 @@ Dados_MonitorAr_*.csv
 
 # Produto analitico derivado, regenerado pelo script 03b
 dados_MP10_horario_v2.rds
+
+# Dados meteorologicos brutos
+precipitacao/
+
+# Base meteorologica derivada e regeneravel
+outputs/09_meteorologia/precipitacao/precipitacao_2017_2025_consolidada.rds
