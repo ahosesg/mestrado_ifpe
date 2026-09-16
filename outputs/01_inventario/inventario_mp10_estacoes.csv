@@ -1,0 +1,7 @@
+"cod_estacao","no_estacao","primeiro_ano_com_registro","ultimo_ano_com_registro","anos_com_registro","n_anos_com_registro","n_registros_total","primeira_medicao","ultima_medicao","latitude_referencia","longitude_referencia","latitude_min","latitude_max","longitude_min","longitude_max","municipio","fonte_registro","situacao_estacao","origem_coordenada"
+"12","IPOJUCA",2017,2025,"2017;2018;2019;2020;2021;2022;2024;2025",8,47950,2017-07-26,2025-12-31,-8.4212395,-35.0389595,-8.44359,-8.398889,-35.063889,-35.01403,"Ipojuca","CPRH | N/A","O","Atribuída pela estação | Original"
+"13","CUPE",2020,2025,"2020;2021;2022;2024;2025",5,23417,2020-07-26,2025-04-07,-8.3982145,-35.0535095,-8.398889,-8.39754,-35.063889,-35.04313,"Ipojuca","CPRH | N/A","O","Atribuída pela estação | Original"
+"14","IFPE",2017,2025,"2017;2018;2019;2020;2021;2022;2024;2025",8,35703,2017-07-26,2025-12-31,-8.3917245,-35.0530945,-8.398889,-8.38456,-35.063889,-35.0423,"Ipojuca","CPRH | N/A","O","Atribuída pela estação | Original"
+"15","CPRH",2017,2025,"2017;2018;2019;2020;2021;2022;2024;2025",8,31501,2017-07-26,2025-02-22,-8.3122785,-35.028395,-8.33789,-8.286667,-35.035,-35.02179,"Cabo de Santo Agostinho","CPRH | N/A","O","Atribuída pela estação | Original"
+"16","SUAPE",2022,2022,"2022",1,7902,2022-01-01,2022-12-31,NA,NA,NA,NA,NA,NA,NA,NA,NA,"Não disponível"
+"PE01","Gaibu",2017,2020,"2017;2018;2019;2020",4,18317,2017-07-26,2020-04-20,NA,NA,NA,NA,NA,NA,NA,NA,NA,"Não disponível"
