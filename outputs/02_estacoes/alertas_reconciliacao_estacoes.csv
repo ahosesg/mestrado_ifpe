@@ -1,0 +1,6 @@
+"tipo_alerta","ano","estacao","id_estacao","descricao"
+"coordenada_compartilhada",2025,"EDCUPE | IFPE | IPOJUCA","136673 | 136674 | 136675","Mesma coordenada para 3 IDs e 3 nomes de estacao."
+"deslocamento_cadastral",2025,"CPRH","136676","Distancia de 5.878 km em relacao ao cadastro anterior (ano 2024)."
+"deslocamento_cadastral",2025,"EDCUPE","136674","Distancia de 2.288 km em relacao ao cadastro anterior (ano 2024)."
+"deslocamento_cadastral",2025,"IFPE","136675","Distancia de 2.86 km em relacao ao cadastro anterior (ano 2024)."
+"deslocamento_cadastral",2025,"IPOJUCA","136673","Distancia de 7.402 km em relacao ao cadastro anterior (ano 2024)."

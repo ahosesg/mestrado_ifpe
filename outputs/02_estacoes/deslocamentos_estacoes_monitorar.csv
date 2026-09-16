@@ -1,0 +1,5 @@
+"ano","id_estacao","cod_estacao","no_estacao","nome_normalizado","no_municipio","n_pares_coordenadas","latitude_mediana","longitude_mediana","latitude_min","latitude_max","longitude_min","longitude_max","ano_anterior","id_estacao_anterior","latitude_anterior","longitude_anterior","distancia_km","alerta_deslocamento"
+2025,"136676","15","CPRH","CPRH","Cabo de Santo Agostinho",1,-8.286667,-35.035,-8.286667,-8.286667,-35.035,-35.035,2024,"136676",-8.33789,-35.02179,5.87826950513074,"ALERTA >= 1 km"
+2025,"136674","13","EDCUPE","EDCUPE","Ipojuca",1,-8.398889,-35.063889,-8.398889,-8.398889,-35.063889,-35.063889,2024,"136674",-8.39754,-35.04313,2.28846790405731,"ALERTA >= 1 km"
+2025,"136675","14","IFPE","IFPE","Ipojuca",1,-8.398889,-35.063889,-8.398889,-8.398889,-35.063889,-35.063889,2024,"136675",-8.38456,-35.0423,2.85985064629898,"ALERTA >= 1 km"
+2025,"136673","12","IPOJUCA","IPOJUCA","Ipojuca",1,-8.398889,-35.063889,-8.398889,-8.398889,-35.063889,-35.063889,2024,"136673",-8.44359,-35.01403,7.40160286701558,"ALERTA >= 1 km"

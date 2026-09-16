@@ -1,0 +1,35 @@
+"ano","cod_estacao","no_estacao","nome_normalizado","origem_coordenada","n_pares","latitude_mediana","longitude_mediana"
+2017,"15","CPRH","CPRH","Atribuída pela estação",1,-8.3122785,-35.028395
+2018,"15","CPRH","CPRH","Atribuída pela estação",1,-8.3122785,-35.028395
+2019,"15","CPRH","CPRH","Atribuída pela estação",1,-8.3122785,-35.028395
+2020,"15","CPRH","CPRH","Atribuída pela estação",1,-8.3122785,-35.028395
+2021,"15","CPRH","CPRH","Atribuída pela estação",1,-8.3122785,-35.028395
+2022,"15","CPRH","CPRH","Atribuída pela estação",1,-8.3122785,-35.028395
+2024,"15","CPRH","CPRH","Original",1,-8.33789,-35.02179
+2025,"15","CPRH","CPRH","Original",1,-8.286667,-35.035
+2020,"13","CUPE","CUPE","Atribuída pela estação",1,-8.3982145,-35.0535095
+2021,"13","CUPE","CUPE","Atribuída pela estação",1,-8.3982145,-35.0535095
+2022,"13","CUPE","CUPE","Atribuída pela estação",1,-8.3982145,-35.0535095
+2024,"13","CUPE","CUPE","Original",1,-8.39754,-35.04313
+2025,"13","CUPE","CUPE","Original",1,-8.398889,-35.063889
+2017,"PE01","Gaibu","GAIBU","Não disponível",1,NA,NA
+2018,"PE01","Gaibu","GAIBU","Não disponível",1,NA,NA
+2019,"PE01","Gaibu","GAIBU","Não disponível",1,NA,NA
+2020,"PE01","Gaibu","GAIBU","Não disponível",1,NA,NA
+2017,"14","IFPE","IFPE","Atribuída pela estação",1,-8.3917245,-35.0530945
+2018,"14","IFPE","IFPE","Atribuída pela estação",1,-8.3917245,-35.0530945
+2019,"14","IFPE","IFPE","Atribuída pela estação",1,-8.3917245,-35.0530945
+2020,"14","IFPE","IFPE","Atribuída pela estação",1,-8.3917245,-35.0530945
+2021,"14","IFPE","IFPE","Atribuída pela estação",1,-8.3917245,-35.0530945
+2022,"14","IFPE","IFPE","Atribuída pela estação",1,-8.3917245,-35.0530945
+2024,"14","IFPE","IFPE","Original",1,-8.38456,-35.0423
+2025,"14","IFPE","IFPE","Original",1,-8.398889,-35.063889
+2017,"12","IPOJUCA","IPOJUCA","Atribuída pela estação",1,-8.4212395,-35.0389595
+2018,"12","IPOJUCA","IPOJUCA","Atribuída pela estação",1,-8.4212395,-35.0389595
+2019,"12","IPOJUCA","IPOJUCA","Atribuída pela estação",1,-8.4212395,-35.0389595
+2020,"12","IPOJUCA","IPOJUCA","Atribuída pela estação",1,-8.4212395,-35.0389595
+2021,"12","IPOJUCA","IPOJUCA","Atribuída pela estação",1,-8.4212395,-35.0389595
+2022,"12","IPOJUCA","IPOJUCA","Atribuída pela estação",1,-8.4212395,-35.0389595
+2024,"12","IPOJUCA","IPOJUCA","Original",1,-8.44359,-35.01403
+2025,"12","IPOJUCA","IPOJUCA","Original",1,-8.398889,-35.063889
+2022,"16","SUAPE","SUAPE","Não disponível",1,NA,NA
