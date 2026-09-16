@@ -1,0 +1,10 @@
+"indicador","valor"
+"n_linhas_v1",164790
+"n_linhas_elegiveis",164725
+"n_linhas_nao_elegiveis",65
+"n_horas_v2",157139
+"n_horas_com_valor_v2",157074
+"n_horas_sem_valor_v2",65
+"n_horas_dup_concordante",108
+"n_horas_dup_divergente",7336
+"n_horas_zero_elegivel",489
