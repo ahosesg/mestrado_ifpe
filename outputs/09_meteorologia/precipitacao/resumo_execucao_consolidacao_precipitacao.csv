@@ -1,0 +1,13 @@
+﻿indicador,valor
+n_arquivos_encontrados,134
+n_arquivos_lidos_ok,134
+n_arquivos_com_erro,0
+n_registros_consolidados,20712379
+n_fontes,2
+n_estacoes_fonte,478
+n_registros_datahora_ausente,0
+n_registros_precipitacao_ausente,374332
+n_registros_precipitacao_negativa,0
+n_registros_duplicados_estacao_tempo,324255
+n_registros_conflitantes_estacao_tempo,16
+n_registros_fora_periodo_local_removidos,439

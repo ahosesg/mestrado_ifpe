@@ -1,0 +1,3 @@
+﻿fonte_dados,n_registros,n_estacoes,n_anos,n_precipitacao_ausente,n_precipitacao_negativa,n_registros_duplicados,n_registros_conflitantes
+CEMADEN,19629295,453,9,0,0,324255,16
+INMET,1083084,25,9,374332,0,0,0

@@ -36,7 +36,7 @@ Dados_MonitorAr_*.csv
 dados_MP10_horario_v2.rds
 
 # Dados meteorologicos brutos
-precipitacao/
+/precipitacao/
 
 # Base meteorologica derivada e regeneravel
 outputs/09_meteorologia/precipitacao/precipitacao_2017_2025_consolidada.rds
