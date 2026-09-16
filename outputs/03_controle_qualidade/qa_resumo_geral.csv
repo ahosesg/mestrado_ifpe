@@ -1,0 +1,12 @@
+"indicador","valor"
+"n_registros_v1",164790
+"n_concentracoes_ausentes",30
+"n_concentracoes_negativas",35
+"n_concentracoes_zero",489
+"n_grupos_duplicados_timestamp_original",7444
+"n_grupos_duplicados_hora_arredondada",7444
+"n_colisoes_por_arredondamento",0
+"n_grupos_multiplas_fontes_mesmo_horario",0
+"n_combinacoes_flags_situacoes",39
+"n_registros_ano_incompativel",0
+"n_registros_arredondamento_maior_1s",0
