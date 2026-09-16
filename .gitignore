@@ -31,3 +31,6 @@ Thumbs.db
 
 # Dados brutos do MonitorAr, muito grandes para Git
 Dados_MonitorAr_*.csv
+
+# Produto analitico derivado, regenerado pelo script 03b
+dados_MP10_horario_v2.rds
