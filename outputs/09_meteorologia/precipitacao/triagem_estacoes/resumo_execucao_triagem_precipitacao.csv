@@ -1,0 +1,12 @@
+﻿indicador,valor
+n_referencias_espaciais_mp10,4
+n_estacoes_precipitacao_com_coordenada,478
+n_pares_mp10_precipitacao_total,1912
+n_pares_ate_50km,455
+n_pares_ate_30km,109
+n_estacoes_precipitacao_ate30km_unicas,47
+n_estacoes_precipitacao_coord_variavel_ate30km,1
+n_alvos_estacao_ano_avaliados,4
+n_candidatos_ano_alvo_com_dados,341
+n_candidatos_ano_alvo_12_meses,217
+n_candidatos_ano_alvo_300_dias,225

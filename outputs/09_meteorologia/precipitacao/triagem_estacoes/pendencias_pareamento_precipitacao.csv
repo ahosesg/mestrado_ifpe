@@ -1,0 +1,8 @@
+﻿item,situacao
+Gaibu 2019,Sem coordenada documental validada no crosswalk
+SUAPE 2022,Sem coordenada documental validada no crosswalk
+CUPE 2021,EDCUPE 2024 usada apenas como referencia espacial provisoria; confirmar equivalencia
+Coordenadas MonitorAr 2025,Nao usadas nesta triagem por coordenadas compartilhadas/suspeitas
+Fuso CEMADEN/INMET,Confirmar documentalmente antes da integracao definitiva
+Significado temporal valorMedida CEMADEN,Confirmar intervalo de acumulacao antes de agregar chuva diaria
+Duplicidades CEMADEN,Diagnosticar origem; cobertura por dia nao depende da contagem duplicada
