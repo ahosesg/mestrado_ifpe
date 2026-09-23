@@ -1,0 +1,13 @@
+﻿indicador,valor
+n_alvos_mp10,5
+n_combinacoes_alvo_candidata,19
+n_estacoes_automaticas_distintas,6
+n_estacao_ano_extraidos,15
+n_linhas_horarias_unicas,130188
+n_grupos_duplicados,0
+n_grupos_duplicados_conflitantes,0
+n_linhas_sem_datahora_local,0
+n_ur_fora_0_100,0
+n_vel_vento_negativa,0
+n_dir_vento_fora_0_360,0
+n_pressao_nao_positiva,0
