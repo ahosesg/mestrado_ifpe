@@ -1,0 +1,6 @@
+﻿estacao_historica,ano_alvo,origem_coordenada,status_espacial,n_automaticas_ano,n_automaticas_nucleares_completas,cod_auto_mais_proxima,nome_auto_mais_proxima,distancia_auto_mais_proxima_km,completude_min_auto_mais_proxima,pressao_auto_mais_proxima_pct
+CUPE,2021,"EDCUPE 2024, proxy espacial provisoria para CUPE",proxy_CUPE,13,12,A301,RECIFE,38.7434579472453,98.3459044594416,99.7882757708085
+Gaibu,2019,Coordenada historica documentada PE01,documentado,13,13,A301,RECIFE,30.0048785608036,58.3675799086758,99.9429223744292
+IFPE,2018,"MonitorAr 2024, proxy espacial da serie historica",provisorio,13,13,A301,RECIFE,37.320922014816,94.634703196347,94.6575342465753
+IPOJUCA,2021,"MonitorAr 2024, proxy espacial da serie historica",provisorio,13,12,A301,RECIFE,43.1702325218827,98.3459044594416,99.7882757708085
+IPOJUCA,2025,"MonitorAr 2024, proxy espacial da serie historica",provisorio,12,11,A357,PALMARES,65.7758532771756,75.9049902934795,99.9771611282403
