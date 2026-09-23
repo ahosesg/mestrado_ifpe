@@ -1,0 +1,7 @@
+﻿estacao_historica,ano_alvo,limitacao_principal
+IFPE,2018,"Estacao INMET a aproximadamente 37 km; interpretar como condicao meteorologica regional, nao micrometeorologia local."
+Gaibu,2019,Velocidade e direcao do vento possuem apenas cerca de 58% de completude horaria efetiva na A301 em 2019.
+CUPE,2021,"A301 encerra registros em novembro de 2021; alem disso, a localizacao CUPE usa EDCUPE 2024 como proxy espacial."
+IPOJUCA,2021,A301 encerra registros em novembro de 2021 e esta a cerca de 43 km do alvo espacial adotado.
+IPOJUCA,2025,A357 esta a cerca de 66 km; umidade relativa possui aproximadamente 76% de completude efetiva.
+SUAPE,2022,Coordenada historica de SUAPE/PE06 ainda nao foi documentalmente resolvida.
