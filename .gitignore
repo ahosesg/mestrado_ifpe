@@ -40,3 +40,6 @@ dados_MP10_horario_v2.rds
 
 # Base meteorologica derivada e regeneravel
 outputs/09_meteorologia/precipitacao/precipitacao_2017_2025_consolidada.rds
+# Produtos derivados da Etapa 9C, grandes e regeneraveis
+outputs/09_meteorologia/precipitacao/qaqc_completude/precipitacao_2017_2025_qaqc_v2.rds
+outputs/09_meteorologia/precipitacao/qaqc_completude/completude_diaria_precipitacao_qaqc.rds
