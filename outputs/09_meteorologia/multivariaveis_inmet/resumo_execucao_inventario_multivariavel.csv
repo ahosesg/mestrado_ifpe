@@ -1,0 +1,11 @@
+﻿indicador,valor
+n_csv_totais,134
+n_arquivos_inmet,25
+n_arquivos_inmet_ok,25
+n_arquivos_inmet_erro,0
+n_estacoes_inmet_distintas,25
+n_estacoes_automaticas,13
+n_estacoes_convencionais,12
+n_estacao_ano_variavel,1030
+n_colunas_alvo_ausentes,0
+n_estacao_ano_variavel_sem_valor,186
