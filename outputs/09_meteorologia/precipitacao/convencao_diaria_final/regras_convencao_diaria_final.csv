@@ -1,0 +1,8 @@
+﻿item,regra
+fuso_operacional,"America/Recife, derivado da conversao UTC realizada na Etapa 9A."
+timestamp_intervalo,O timestamp CEMADEN e interpretado como final do intervalo de acumulacao.
+registro_00h,Registro exatamente a 00:00 local e atribuido ao dia civil anterior.
+extremos,Valores positivos extremos permanecem preservados; nao ha exclusao por magnitude.
+conflitos,Registros marcados como conflito na 9C nao entram nos totais finais.
+completude,Mantem os criterios de continuidade da 9D: 60 min principal; 70 e 90 min como sensibilidades.
+borda_2025,"Para 2025, a base nao contem 2026; portanto o total de 31/12/2025 pode nao incorporar eventual transmissao de 00:00 de 01/01/2026."
