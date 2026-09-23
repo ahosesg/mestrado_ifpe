@@ -1,0 +1,2 @@
+﻿estacao_historica,codigo_historico,ano_alvo,endereco_documentado,coordenada_publicada,motivo_pendencia,status
+SUAPE,PE06,2022,"Rodovia PE-60, km 10, s/n, Engenho Massangana, Complexo Portuario de Suape, Ipojuca - PE","S 8°36'84.50"" / O 35°3'68.45""",Coordenada publicada apresenta segundos superiores a 60; nao converter nem corrigir por inferencia.,pendente_coordenada_documental_valida
