@@ -1,0 +1,8 @@
+﻿fonte_tipo,componente,regra
+CEMADEN,cadencia,Cadencia variavel: em chuva pode haver transmissao a cada 10 min; sem chuva pode haver transmissao horaria.
+CEMADEN,cobertura_primaria,"Dia com continuidade temporal se o maior intervalo entre registros validos, incluindo as fronteiras do dia, for <=60 min."
+CEMADEN,sensibilidade,Recalcular tambem com limites de 70 e 90 min.
+INMET_AUTOMATICA,cobertura_primaria,Dia completo quando existem 24 valores horarios validos de precipitacao.
+INMET_AUTOMATICA,sensibilidade,Avaliar tambem >=20 e >=18 valores horarios validos por dia.
+INMET_CONVENCIONAL,disponibilidade,"Registrar dias com valor de precipitacao 24 h, mas nao usar no pareamento primario ate confirmar horario de referencia do acumulado."
+TODAS,extremos,Valores positivos extremos permanecem preservados; a 9D nao os exclui por magnitude.
