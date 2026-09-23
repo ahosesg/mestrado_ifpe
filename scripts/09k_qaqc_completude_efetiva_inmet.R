@@ -1399,14 +1399,26 @@ if (length(faltantes_grade)) {
   )
 }
 
+# O denominador de dias validos de MP10 deve ser independente da
+# disponibilidade da candidata meteorologica. Caso contrario, uma
+# estacao com meses inteiros ausentes teria seu percentual de
+# sobreposicao artificialmente inflado.
+denominadores_mp10 <- mp10[
+  dia_valido_mma_16h %in% TRUE,
+  .(
+    n_dias_mp10_validos = uniqueN(
+      data_local
+    )
+  ),
+  by = .(
+    estacao_historica,
+    ano_alvo = ano
+  )
+]
+
 sobreposicao <- grade_alvos[
   ,
   .(
-    n_dias_mp10_validos = sum(
-      dia_mp10_valido %in% TRUE,
-      na.rm = TRUE
-    ),
-
     n_overlap_nuclear_16h = sum(
       dia_mp10_valido %in% TRUE &
         nuclear_16h %in% TRUE,
@@ -1435,6 +1447,23 @@ sobreposicao <- grade_alvos[
     completude_min_nucleares_09j
   )
 ]
+
+sobreposicao <- merge(
+  sobreposicao,
+  denominadores_mp10,
+  by = c(
+    "estacao_historica",
+    "ano_alvo"
+  ),
+  all.x = TRUE
+)
+
+if (any(is.na(sobreposicao$n_dias_mp10_validos))) {
+  stop(
+    "Foi impossivel recuperar o denominador completo de dias validos ",
+    "de MP10 para uma ou mais combinacoes alvo-candidata."
+  )
+}
 
 sobreposicao[
   ,
@@ -1489,6 +1518,40 @@ sobreposicao <- merge(
     "ano_alvo"
   ),
   all.x = TRUE
+)
+
+# Auditoria: todas as candidatas do mesmo alvo devem compartilhar
+# exatamente o mesmo denominador de dias validos de MP10.
+aud_den <- sobreposicao[
+  ,
+  .(
+    n_denominadores = uniqueN(
+      n_dias_mp10_validos
+    ),
+    denominador = unique(
+      n_dias_mp10_validos
+    )[1]
+  ),
+  by = .(
+    estacao_historica,
+    ano_alvo
+  )
+]
+
+if (any(aud_den$n_denominadores != 1L)) {
+  stop(
+    "Inconsistencia: candidatas do mesmo alvo possuem denominadores ",
+    "de MP10 diferentes."
+  )
+}
+
+fwrite(
+  aud_den,
+  file.path(
+    SAIDA,
+    "auditoria_denominador_mp10.csv"
+  ),
+  bom = TRUE
 )
 
 setorder(
@@ -1607,6 +1670,6 @@ cat(
   "- a base horaria RDS e derivada e deve permanecer fora do Git;\n",
   "- 16/18/20 h sao sensibilidades, nao criterio final;\n",
   "- esta etapa testa a completude efetiva antes de decidir a fonte meteorologica final;\n",
-  "- Gaibu 2019 e IPOJUCA 2025 permanecem prioritarios para busca de fonte complementar local.\n",
+  "- sera utilizado apenas INMET; menor completude ou maior distancia serao tratadas como limitacoes metodologicas.\n",
   sep = ""
 )
