@@ -1,0 +1,12 @@
+﻿item,regra
+unidade_analise,station-year; nao agregar automaticamente entre estacoes ou anos
+correlacao_principal,"Spearman, com pares validos especificos por variavel"
+correlacao_complementar,"Pearson, como sensibilidade a associacao linear"
+minimo_pares,30 pares validos para reportar correlacao
+sazonalidade,comparar associacao bruta com anomalias centradas pela mediana mensal
+meses_anomalia,anomalias calculadas apenas em meses representativos de MP10
+precipitacao,"avaliar lag 0, 1 e 2 dias; seco versus chuvoso apenas quando a precipitacao e valida"
+direcao_vento,nao correlacionar graus diretamente; usar componentes u/v e setores de 45 graus
+p_valores,nao calculados nesta etapa por autocorrelacao temporal e multiplicidade de comparacoes
+causalidade,"resultados interpretados como associacoes exploratorias, nao efeitos causais"
+complete_case_global,nao utilizar; cada variavel usa sua propria disponibilidade

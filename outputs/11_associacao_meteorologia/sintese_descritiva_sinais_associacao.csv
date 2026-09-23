@@ -1,0 +1,10 @@
+﻿variavel,n_station_years,n_spearman_positivo,n_spearman_negativo,mediana_spearman,n_sinal_mantido_anomalia
+precipitacao_lag0_mm,5,0,5,-0.482034722756611,5
+precipitacao_lag1_mm,5,0,5,-0.19441998523567,5
+precipitacao_lag2_mm,5,1,4,-0.26748580248243,3
+pressao_media_hpa,5,1,4,-0.101302479988551,4
+temperatura_media_c,5,5,0,0.297810688069214,5
+umidade_media_pct,5,0,5,-0.394536250601395,5
+velocidade_vento_media_ms,5,5,0,0.201186150912787,4
+vento_u_medio_ms,5,0,5,-0.421640218620084,5
+vento_v_medio_ms,5,2,3,-0.193585987466156,4
