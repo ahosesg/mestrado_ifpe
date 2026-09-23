@@ -1,0 +1,2 @@
+﻿ano,estacao_a,estacao_b,n_dias_comuns,correlacao_pearson,correlacao_spearman,vies_ipojuca_menos_cupe,mae,rmse,razao_medias_ipojuca_cupe
+2021,CUPE,IPOJUCA,325,0.342413108330095,0.472341374951874,2.0444712140912,5.15901797189121,7.13515820662639,1.15375363107885
