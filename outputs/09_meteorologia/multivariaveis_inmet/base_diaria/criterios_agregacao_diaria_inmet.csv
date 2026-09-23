@@ -1,0 +1,12 @@
+﻿componente,regra
+criterio_principal,>=18 horas validas no dia (75%); criterio operacional do projeto
+sensibilidade_inferior,>=16 horas validas no dia; sensibilidade
+sensibilidade_superior,>=20 horas validas no dia; sensibilidade
+temperatura,"media, minima e maxima; validade avaliada pela propria variavel"
+umidade,media; validade avaliada pela propria variavel
+pressao,media; validade avaliada pela propria variavel
+velocidade_vento,media escalar e maxima; validade avaliada pela velocidade
+direcao_vento,media circular; nao usar media aritmetica simples de graus
+vento_vetorial,medias u/v e vetor medio; requer pares velocidade-direcao validos
+validade_conjunta,indicador nuclear apenas diagnostico; nao filtra automaticamente variaveis individuais
+imputacao,"nenhuma imputacao entre horas, dias ou estacoes"

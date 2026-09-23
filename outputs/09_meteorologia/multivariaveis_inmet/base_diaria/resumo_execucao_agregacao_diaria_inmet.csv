@@ -1,0 +1,9 @@
+﻿indicador,valor
+n_series_diarias,10
+n_series_principais,5
+n_series_sensibilidade,5
+n_linhas_calendario_diario,3650
+n_grades_calendario_ok,10
+n_integracoes_mp10_ok,10
+criterio_principal_horas,18
+n_valores_imputados,0
