@@ -1,0 +1,9 @@
+﻿fonte_dados,cod_estacao,datahora_local,n_linhas,n_valores_distintos,nome_estacao,valores_mm,arquivos
+CEMADEN,260920401A,2017-05-28T09:10:00Z,2,2,Centro,0 | 5.12,data(10).csv
+CEMADEN,260920401A,2017-05-28T10:10:00Z,2,2,Centro,0 | 4.53,data(10).csv
+CEMADEN,260920401A,2017-05-28T11:10:00Z,2,2,Centro,0 | 0.2,data(10).csv
+CEMADEN,260920401A,2017-05-28T12:10:00Z,2,2,Centro,0 | 0.59,data(10).csv
+CEMADEN,260920401A,2017-05-28T16:10:00Z,2,2,Centro,0 | 0.2,data(10).csv
+CEMADEN,260920401A,2017-05-29T02:10:00Z,2,2,Centro,0 | 0.39,data(10).csv
+CEMADEN,260920401A,2017-05-29T03:10:00Z,2,2,Centro,0 | 0.2,data(10).csv
+CEMADEN,260920401A,2017-05-29T04:10:00Z,2,2,Centro,0 | 0.2,data(10).csv
