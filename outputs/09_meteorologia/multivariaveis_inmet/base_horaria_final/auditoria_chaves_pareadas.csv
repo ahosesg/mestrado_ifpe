@@ -1,0 +1,11 @@
+﻿estacao_historica,ano_alvo,papel_serie,cod_estacao,chave,disponivel_9k
+IFPE,2018,principal,A301,A301::2018,TRUE
+IFPE,2018,sensibilidade,A328,A328::2018,TRUE
+Gaibu,2019,principal,A301,A301::2019,TRUE
+Gaibu,2019,sensibilidade,A328,A328::2019,TRUE
+CUPE,2021,principal,A301,A301::2021,TRUE
+CUPE,2021,sensibilidade,A357,A357::2021,TRUE
+IPOJUCA,2021,principal,A301,A301::2021,TRUE
+IPOJUCA,2021,sensibilidade,A357,A357::2021,TRUE
+IPOJUCA,2025,principal,A357,A357::2025,TRUE
+IPOJUCA,2025,sensibilidade,A341,A341::2025,TRUE
