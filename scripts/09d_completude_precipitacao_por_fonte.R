@@ -1115,7 +1115,17 @@ avaliacao <- merge(
 
 avaliacao <- merge(
   avaliacao,
-  meta,
+  meta[
+    ,
+    .(
+      fonte_dados,
+      cod_estacao,
+      nome_estacao,
+      municipios,
+      tipo_estacao,
+      periodicidade_fonte
+    )
+  ],
   by = c(
     "fonte_dados",
     "cod_estacao"
