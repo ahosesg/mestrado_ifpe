@@ -1,0 +1,6 @@
+﻿estacao_historica,ano_alvo,cod_estacao,nome_estacao_inmet,n_dias,n_datas_unicas,n_dias_com_precip_principal,n_dias_com_precip_sens,n_dias_mp10_validos,integracao_ok
+CUPE,2021,A301,RECIFE,365,365,365,365,347,TRUE
+Gaibu,2019,A301,RECIFE,365,365,365,365,262,TRUE
+IFPE,2018,A301,RECIFE,365,365,365,365,275,TRUE
+IPOJUCA,2021,A301,RECIFE,365,365,365,365,329,TRUE
+IPOJUCA,2025,A357,PALMARES,365,365,365,365,312,TRUE

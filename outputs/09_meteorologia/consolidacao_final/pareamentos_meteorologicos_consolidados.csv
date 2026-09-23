@@ -1,0 +1,7 @@
+﻿estacao_historica,ano_alvo,cod_inmet_principal,nome_inmet_principal,distancia_inmet_principal_km,cod_inmet_sensibilidade,nome_inmet_sensibilidade,distancia_inmet_sensibilidade_km,status_inmet,cod_precip_principal,nome_precip_principal,distancia_precip_principal_km,cod_precip_sensibilidade,nome_precip_sensibilidade,distancia_precip_sensibilidade_km,status_precipitacao,fonte_multivariavel,fonte_precipitacao
+IFPE,2018,A301,RECIFE,37.320922014816,A328,SURUBIM,102.042384103705,fechado,260720801A,Centro,2.94037517011968,260720804A,Rurópolis,4.23417961072742,fechado,INMET,CEMADEN
+Gaibu,2019,A301,RECIFE,30.0048785608036,A328,SURUBIM,106.563969820775,fechado_com_limitacao_vento,260290204A,Enseado dos Corais,0.116707872718135,260790109A,Barra de Jangada,12.4106755442896,fechado,INMET,CEMADEN
+CUPE,2021,A301,RECIFE,38.7434579472453,A357,PALMARES,65.0191917948857,fechado_com_limitacao_temporal_2021,260720801A,Centro,2.31199229299342,260720804A,Rurópolis,3.31306361103069,fechado_com_proxy_espacial_CUPE,INMET,CEMADEN
+IPOJUCA,2021,A301,RECIFE,43.1702325218827,A357,PALMARES,65.7758532771756,fechado_com_limitacao_temporal_2021,260720801A,Centro,7.32836097674827,260720804A,Rurópolis,7.14376732272583,fechado,INMET,CEMADEN
+SUAPE,2022,,"",,,"",,pendente_coordenada_historica,,,,,,,pendente_coordenada_historica,,
+IPOJUCA,2025,A357,PALMARES,65.7758532771756,A341,CARUARU,111.998823291037,fechado_com_limitacao_espacial,260720804A,Rurópolis,7.14376732272583,260720801G,Campo do Avião,6.92640747959743,fechado_com_limitacao_borda_2025,INMET,CEMADEN

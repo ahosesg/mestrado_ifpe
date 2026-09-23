@@ -1,0 +1,7 @@
+﻿estacao_historica,ano_alvo,limitacao
+IFPE,2018,"INMET principal a cerca de 37 km; interpretar temperatura, umidade, vento e pressao como condicoes meteorologicas regionais."
+Gaibu,2019,"INMET A301 apresenta cobertura reduzida de vento em 2019; a precipitacao principal e local, mas possui cobertura propria definida pelo criterio de continuidade de 60 min."
+CUPE,2021,A301 encerra registros em novembro de 2021; coordenada do alvo CUPE utiliza EDCUPE 2024 como proxy espacial.
+IPOJUCA,2021,A301 encerra registros em novembro de 2021 e esta a cerca de 43 km da referencia espacial adotada para IPOJUCA.
+IPOJUCA,2025,INMET A357 esta a cerca de 66 km e a umidade relativa possui menor cobertura; precipitacao de 31/12/2025 possui limitacao de borda pela ausencia de transmissao de 01/01/2026.
+SUAPE,2022,Coordenada historica valida de SUAPE/PE06 ainda nao foi obtida; pareamentos meteorologicos permanecem pendentes.

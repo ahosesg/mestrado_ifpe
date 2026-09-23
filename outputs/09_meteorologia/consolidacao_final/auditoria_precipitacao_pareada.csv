@@ -1,0 +1,11 @@
+﻿estacao_historica,ano_alvo,papel_precipitacao,cod_precipitacao,nome_precipitacao,n_dias,n_datas_unicas,primeira_data,ultima_data,n_dias_validos_60,n_dias_validos_70,n_dias_validos_90,grade_ok
+CUPE,2021,principal,260720801A,Centro,365,365,2021-01-01,2021-12-31,322,330,339,TRUE
+CUPE,2021,sensibilidade,260720804A,Rurópolis,365,365,2021-01-01,2021-12-31,312,326,328,TRUE
+Gaibu,2019,principal,260290204A,Enseado dos Corais,365,365,2019-01-01,2019-12-31,261,278,284,TRUE
+Gaibu,2019,sensibilidade,260790109A,Barra de Jangada,365,365,2019-01-01,2019-12-31,283,296,302,TRUE
+IFPE,2018,principal,260720801A,Centro,365,365,2018-01-01,2018-12-31,330,338,349,TRUE
+IFPE,2018,sensibilidade,260720804A,Rurópolis,365,365,2018-01-01,2018-12-31,337,349,355,TRUE
+IPOJUCA,2021,principal,260720801A,Centro,365,365,2021-01-01,2021-12-31,322,330,339,TRUE
+IPOJUCA,2021,sensibilidade,260720804A,Rurópolis,365,365,2021-01-01,2021-12-31,312,326,328,TRUE
+IPOJUCA,2025,principal,260720804A,Rurópolis,365,365,2025-01-01,2025-12-31,334,346,354,TRUE
+IPOJUCA,2025,sensibilidade,260720801G,Campo do Avião,365,365,2025-01-01,2025-12-31,268,359,360,TRUE
